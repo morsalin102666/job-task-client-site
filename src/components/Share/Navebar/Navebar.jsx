@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 
 const Navebar = () => {
     const naveItem = <>
-        {/* <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Home</a></li></Link>
-        <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Create Superhero</a></li></Link>
-        <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Interview</a></li></Link>
-        <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>SignUp</a></li></Link>
-        <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Login</a></li></Link> */}
+        <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Home</a></li></Link>
+        <Link to={'/supperHerro'}><li className="hover:bg-gray-100 rounded-xl"><a>Create Superhero</a></li></Link>
+        <Link to={'/interview'}><li className="hover:bg-gray-100 rounded-xl"><a>Interview</a></li></Link>
+        <Link to={'/signUp'}><li className="hover:bg-gray-100 rounded-xl"><a>SignUp</a></li></Link>
+        <Link to={'/login'}><li className="hover:bg-gray-100 rounded-xl"><a>Login</a></li></Link>
     </>
     return (
         <div>
-            <div className="navbar bg-[#221551] text-white px-[3%]">
+            <div className="navbar bg-[#1A103C] text-white px-[3%]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

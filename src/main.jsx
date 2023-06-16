@@ -28,15 +28,15 @@ const router = createBrowserRouter([
         element: <SupperHero></SupperHero>
       },
       {
-        path: 'interview',
+        path: '/interview',
         element: <Interview></Interview>
       },
       {
-        path: 'singUp',
+        path: '/signUp',
         element: <SingUp></SingUp>
       },
       {
-        path: 'login',
+        path: '/login',
         element: <Login></Login>
       }
     ]

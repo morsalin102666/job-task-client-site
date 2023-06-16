@@ -8,7 +8,9 @@ function App() {
   return (
     <>
       <Navebar></Navebar>
-      <Outlet></Outlet>
+      <div className='bg-[#221551] text-white'>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </>
   )
