@@ -7,7 +7,7 @@ const Navebar = () => {
         <Link to={'/interview'}><li className="hover:bg-gray-100 rounded-xl"><a>Interview</a></li></Link>
         <Link to={'/signUp'}><li className="hover:bg-gray-100 rounded-xl"><a>SignUp</a></li></Link>
         <Link to={'/login'}><li className="hover:bg-gray-100 rounded-xl"><a>Login</a></li></Link>
-    </>
+    </> 
     return (
         <div>
             <div className="navbar bg-[#1A103C] text-white px-[3%]">

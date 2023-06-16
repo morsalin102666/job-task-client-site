@@ -2,7 +2,7 @@
 const SingUp = () => {
     return (
         <div>
-            SognUp Page
+            
         </div>
     );
 };
