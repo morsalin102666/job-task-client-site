@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       <Navebar></Navebar>
-      <div className='bg-[#221551] text-white'>
+      <div className='bg-[#2C2C6C] text-white'>
         <Outlet></Outlet>
       </div>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   )
 }
