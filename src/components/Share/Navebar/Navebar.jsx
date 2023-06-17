@@ -11,9 +11,8 @@ const Navebar = () => {
         <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Home</a></li></Link>
         <Link to={'/supperHerro'}><li className="hover:bg-gray-100 rounded-xl"><a>Create Superhero</a></li></Link>
         <Link to={'/interview'}><li className="hover:bg-gray-100 rounded-xl"><a>Interview</a></li></Link>
-        <Link to={'/chart'}><li className="hover:bg-gray-100 rounded-xl"><a>Comparison Chart</a></li></Link>
         <Link to={'/signUp'}><li className="hover:bg-gray-100 rounded-xl"><a>SignUp</a></li></Link>
-    </> 
+    </>
     return (
         <div>
             <div className="navbar bg-[#1A103C] text-white px-[3%]">
@@ -26,7 +25,7 @@ const Navebar = () => {
                             {naveItem}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl font-serif"><i><span className="text-[35px]">S</span>upper Herro</i></a>
+                    <a className="btn btn-ghost normal-case text-xl font-serif"><i><span className="text-[35px]">S</span>upper Hero</i></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -34,7 +33,7 @@ const Navebar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                {
+                    {
                         user
                             ?
                             <div className="dropdown dropdown-end">

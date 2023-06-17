@@ -14,7 +14,6 @@ import SingUp from './components/SingUp/SingUp.jsx';
 import Login from './components/Login/Login.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute.jsx';
-import Chart from './components/Chart/Chart.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,10 +32,6 @@ const router = createBrowserRouter([
       {
         path: '/interview',
         element: <PrivetRoute><Interview></Interview></PrivetRoute>
-      },
-      {
-        path: '/chart',
-        element: <Chart></Chart>
       },
       {
         path: '/signUp',

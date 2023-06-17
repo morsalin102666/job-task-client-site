@@ -11,7 +11,7 @@ function App() {
       <div className='bg-[#2C2C6C] text-white'>
         <Outlet></Outlet>
       </div>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   )
 }
