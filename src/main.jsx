@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/supperHerro',
-        element: <SupperHero></SupperHero>
+        element: <PrivetRoute><SupperHero></SupperHero></PrivetRoute>
       },
       {
         path: '/interview',

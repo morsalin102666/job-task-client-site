@@ -21,10 +21,11 @@ const Interview = () => {
 
         setIntData(interviewrInfo)
 
-        fetch(`http://localhost:5000/supperHero?=${comparison}`)
+        fetch(`https://supper-hero-server-site.vercel.app/supperHero?=${comparison}`)
             .then(res => res.json())
             .then(data => setHeroData(data))
-
+        
+        form.reset()
         setOn(true)
     }
 

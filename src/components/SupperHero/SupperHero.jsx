@@ -17,7 +17,7 @@ const SupperHero = () => {
         const heroInfo = { heroId, strength, invisibility, healing, shape, telekinesis }
         console.log(heroInfo)
 
-        fetch('http://localhost:5000/supperHero', {
+        fetch('https://supper-hero-server-site.vercel.app/supperHero', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
