@@ -6,12 +6,18 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import useTitel from "../useTitel/useTitel";
 
 const SingUp = () => {
-    const [open, setOpen] = useState(false)
+    // use title hook
     useTitel('Sign Up Page')
+
+    // state 
+    const [open, setOpen] = useState(false)
     const [error, setError] = useState('')
     console.log(error)
+    
+    // get AuthContext
     const { createNewUser, updateUserProfile } = useContext(AuthContext)
 
+    // sing up account 
     const signUpAccount = event => {
         event.preventDefault()
 
@@ -44,6 +50,7 @@ const SingUp = () => {
             return alert('plesh musbe 6 carector password')
         }
 
+        // update user profile 
         const updateProfileUser = (userName, photoUrl) => {
             const profile = {
                 photoURL: photoUrl,

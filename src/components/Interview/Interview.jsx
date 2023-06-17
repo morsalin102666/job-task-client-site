@@ -3,11 +3,15 @@ import useTitel from "../useTitel/useTitel";
 import { useState } from "react";
 
 const Interview = () => {
+    // use titel hook
     useTitel('Interview Page')
+
+    // all state
     const [on, setOn] = useState(false)
     const [heroData, setHeroData] = useState([])
     const [interviewData, setIntData] = useState([])
 
+    // gate comparison value
     const interviewrData = event => {
         event.preventDefault()
         const form = event.target;
@@ -17,48 +21,54 @@ const Interview = () => {
         const healing = form.healing.value;
         const shape = form.shape.value;
         const telekinesis = form.telekinesis.value;
-        const interviewrInfo = {strength, invisibility, healing, shape, telekinesis }
+        const interviewrInfo = { strength, invisibility, healing, shape, telekinesis }
 
         setIntData(interviewrInfo)
 
+        // fetch spasific id data
         fetch(`https://supper-hero-server-site.vercel.app/supperHero?=${comparison}`)
             .then(res => res.json())
             .then(data => setHeroData(data))
-        
+
+        // form reset
         form.reset()
+
+        // toggle chart
         setOn(true)
     }
 
+    // chart all data 
     const data = [
         {
             "name": "Strength",
             "heroData": (heroData.strength),
-            "interviewData": ( interviewData.strength )
+            "interviewData": (interviewData.strength)
         },
         {
             "name": "Paginvisibilitye",
-            "heroData": ( heroData.invisibility ),
-            "interviewData": ( interviewData.invisibility )
+            "heroData": (heroData.invisibility),
+            "interviewData": (interviewData.invisibility)
         },
         {
             "name": "healing",
-            "heroData": ( heroData.healing ),
-            "interviewData": ( interviewData.healing )
+            "heroData": (heroData.healing),
+            "interviewData": (interviewData.healing)
         },
         {
             "name": "Shape",
-            "heroData": ( heroData.shape ),
-            "interviewData": ( interviewData.shape )
+            "heroData": (heroData.shape),
+            "interviewData": (interviewData.shape)
         },
         {
             "name": "Telekinesis",
-            "heroData": ( heroData.telekinesis ),
-            "interviewData": ( interviewData.telekinesis )
+            "heroData": (heroData.telekinesis),
+            "interviewData": (interviewData.telekinesis)
         }
     ]
 
     return (
         <div>
+            {/* comparison form  */}
             <div className="container mx-auto flex justify-center py-[100px]">
                 <div className="w-[40%] px-[70px] pt-[50px] pb-[60px] border border-[#409EFF] rounded-lg">
                     <div>
@@ -94,7 +104,8 @@ const Interview = () => {
                 </div>
             </div>
 
-            { on && <div className="container mx-auto flex justify-center py-[30px]">
+            {/* chart  */}
+            {on && <div className="container mx-auto flex justify-center py-[30px]">
                 <div>
                     <BarChart width={730} height={250} data={data}>
                         <CartesianGrid strokeDasharray="3 3" />

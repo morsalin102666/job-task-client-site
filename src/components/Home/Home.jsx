@@ -3,10 +3,13 @@ import useTitel from "../useTitel/useTitel";
 import ShowId from "./ShowId";
 
 const Home = () => {
+    // use title hook 
     useTitel('Home Page')
 
+    // state 
     const [allData, setAllData] = useState([])
 
+    // all hero data fetch 
     useEffect(() => {
         fetch('https://supper-hero-server-site.vercel.app/supperHeroAllData')
             .then(res => res.json())

@@ -5,12 +5,17 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import useTitel from "../useTitel/useTitel";
 
 const Login = () => {
-    const [open, setOpen] = useState(false)
+    // use title hook 
     useTitel('Login Page')
+
+    // state 
+    const [open, setOpen] = useState(false)
+    const [error, setError] = useState('')
+
+    // navigate or set location 
     const navigate = useNavigate()
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    const [error, setError] = useState('')
     const { logInEmail, signinGoogel, signinGithub } = useContext(AuthContext)
 
     // ============ signIn email password ===========

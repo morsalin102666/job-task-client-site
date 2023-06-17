@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
+// route inporte
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
+// component link
 import Home from './components/Home/Home.jsx';
 import SupperHero from './components/SupperHero/SupperHero.jsx';
 import Interview from './components/Interview/Interview.jsx';
@@ -15,7 +18,7 @@ import Login from './components/Login/Login.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute.jsx';
 
-
+// All route
 const router = createBrowserRouter([
   {
     path: '/',

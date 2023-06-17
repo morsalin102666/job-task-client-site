@@ -7,8 +7,8 @@ const auth = getAuth(app)
 const googleAuth = new GoogleAuthProvider()
 const githubAuth = new GithubAuthProvider()
 
-const AuthProvider = ({children}) => {
-
+const AuthProvider = ({ children }) => {
+    // All state
     const [user, setUser] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -37,14 +37,14 @@ const AuthProvider = ({children}) => {
     // =============== logout email =================
     const signinGoogel = () => {
         setLoading(true)
-        return signInWithPopup(auth , googleAuth)
+        return signInWithPopup(auth, googleAuth)
     }
 
 
     // =============== logout email =================
     const signinGithub = () => {
         setLoading(true)
-        return signInWithPopup(auth , githubAuth)
+        return signInWithPopup(auth, githubAuth)
     }
 
 
@@ -62,7 +62,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
-
+    // Auth info 
     const authInfo = {
         user,
         loading,

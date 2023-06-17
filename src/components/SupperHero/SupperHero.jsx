@@ -2,9 +2,10 @@ import Swal from "sweetalert2";
 import useTitel from "../useTitel/useTitel";
 
 const SupperHero = () => {
-    
+    // use title hooks
     useTitel('SupperHero Page')
 
+    // get supper hero information 
     const heroData = event => {
         event.preventDefault()
         const form = event.target;
@@ -17,6 +18,7 @@ const SupperHero = () => {
         const heroInfo = { heroId, strength, invisibility, healing, shape, telekinesis }
         console.log(heroInfo)
 
+        // post supper hero
         fetch('https://supper-hero-server-site.vercel.app/supperHero', {
             method: 'POST',
             headers: {
@@ -37,6 +39,8 @@ const SupperHero = () => {
                 }
             })
     }
+
+
     return (
         <div className="container mx-auto flex justify-center py-[100px]">
             <div className="w-[40%] px-[70px] pt-[50px] pb-[60px] border border-[#409EFF] rounded-lg">

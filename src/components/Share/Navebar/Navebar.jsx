@@ -3,16 +3,23 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext } from "react";
 
 const Navebar = () => {
+    // get authcontex 
     const { user, logOutEmail } = useContext(AuthContext)
+
+    // logout user 
     const logOutButton = () => {
         logOutEmail()
     }
+
+    // nave items 
     const naveItem = <>
         <Link to={'/'}><li className="hover:bg-gray-100 rounded-xl"><a>Home</a></li></Link>
         <Link to={'/supperHerro'}><li className="hover:bg-gray-100 rounded-xl"><a>Create Superhero</a></li></Link>
         <Link to={'/interview'}><li className="hover:bg-gray-100 rounded-xl"><a>Interview</a></li></Link>
         <Link to={'/signUp'}><li className="hover:bg-gray-100 rounded-xl"><a>SignUp</a></li></Link>
     </>
+
+    
     return (
         <div>
             <div className="navbar bg-[#1A103C] text-white px-[3%]">
