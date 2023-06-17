@@ -12,6 +12,9 @@ import SupperHero from './components/SupperHero/SupperHero.jsx';
 import Interview from './components/Interview/Interview.jsx';
 import SingUp from './components/SingUp/SingUp.jsx';
 import Login from './components/Login/Login.jsx';
+import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
+import PrivetRoute from './components/PrivetRoute/PrivetRoute.jsx';
+import Chart from './components/Chart/Chart.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/interview',
-        element: <Interview></Interview>
+        element: <PrivetRoute><Interview></Interview></PrivetRoute>
+      },
+      {
+        path: '/chart',
+        element: <Chart></Chart>
       },
       {
         path: '/signUp',
@@ -46,6 +53,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

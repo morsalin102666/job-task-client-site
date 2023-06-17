@@ -1,20 +1,60 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import { useState } from "react";
+import Swal from "sweetalert2";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import useTitel from "../useTitel/useTitel";
 
 const SingUp = () => {
     const [open, setOpen] = useState(false)
+    useTitel('Sign Up Page')
+    const [error, setError] = useState('')
+    console.log(error)
+    const { createNewUser, updateUserProfile } = useContext(AuthContext)
 
-    const signUpAccount = event =>{
+    const signUpAccount = event => {
         event.preventDefault()
-        
+
+        setError('')
+
         const form = event.target;
         const name = form.name.value;
         const photoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(name, photoUrl, email, password)
+        if (password.length >= 6) {
+            createNewUser(email, password)
+                .then(result => {
+                    Swal.fire({
+                        title: 'Compleate SignUp',
+                        text: 'Thank you success your signUp',
+                        icon: 'Success',
+                        confirmButtonText: 'ok'
+                    })
+                    console.log(result)
+                    updateProfileUser(name, photoUrl)
+                    form.reset()
+                })
+                .catch(error => {
+                    setError(error.message)
+                })
+        }
+        else {
+            return alert('plesh musbe 6 carector password')
+        }
+
+        const updateProfileUser = (userName, photoUrl) => {
+            const profile = {
+                photoURL: photoUrl,
+                displayName: userName
+            }
+            updateUserProfile(profile)
+                .then(result => { console.log(result.user) })
+                .catch(error => { setError(error.message) })
+        }
+
+
     }
 
     return (
@@ -33,8 +73,8 @@ const SingUp = () => {
                         <div>
                             <input className="w-full mt-8 bg-[#2C2C6C] border border-[#409EFF] outline-none px-3 py-2 rounded-lg text-white" required type={open ? "text" : "password"} name="password" placeholder="Password" />
                             <div className="w-8 h-8 flex justify-center items-center md:ml-[650px] ml-[270px] mt-[-38px]" onClick={() => setOpen(!open)}>
-                                    <span>{open === true ? <AiFillEye></AiFillEye> : <AiFillEyeInvisible></AiFillEyeInvisible>}</span>
-                                </div>
+                                <span>{open === true ? <AiFillEye></AiFillEye> : <AiFillEyeInvisible></AiFillEyeInvisible>}</span>
+                            </div>
                         </div>
                         <input className="w-full mt-8 bg-[#2C2C6C] hover:bg-[#409EFF] border border-[#409EFF] outline-none px-3 py-2 rounded-lg text-white" type="submit" />
                     </form>
